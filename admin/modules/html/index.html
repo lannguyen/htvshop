@@ -1,0 +1,256 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Trang quản lý của quản trị viên</title>
+<link rel="stylesheet" type="text/css" href="css/theme1.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<script>
+	var StyleFile = "theme" + document.cookie.charAt(6) + ".css";
+	document
+			.writeln('<link rel="stylesheet" type="text/css" href="css/' + StyleFile + '">');
+</script>
+<!--[if IE]>
+<link rel="stylesheet" type="text/css" href="css/ie-sucks.css" />
+<![endif]-->
+</head>
+
+<body>
+	<div id="container">
+		<div id="header">
+			<h2>Trang quản trị hệ thống</h2>
+			<div id="topmenu">
+				<ul>
+					<li class="current"><a href="index.php">Thống kê</a></li>
+					<li><a href="index.php?mod=order">Đơn đặt hàng</a></li>
+					<li><a href="users.html?mod=user">Người dùng</a></li>
+					<li><a href="product.html?mod=product">Sản phẩm</a></li>
+				</ul>
+			</div>
+		</div>
+		
+		<div id="wrapper">
+			<div id="content">
+				<div id="rightnow">
+					<h3 class="reallynow">
+						<span>THỐNG KÊ TRONG NGÀY</span> <!-- <a href="#" class="add">Add
+							New Product</a> <a href="#" class="app_add">Some Action</a> --> <br />
+					</h3>
+					<p class="youhave">
+						Bạn có <a href="#">19 đơn đặt hàng</a>, với tổng giá trị <strong>5.000000
+							VNĐ</strong>
+					</p>
+				</div>
+
+				<div id="infobox" class="margin-left">
+					<h3>SẢN PHẨM BÁN CHẠY</h3>
+					<table>
+						<thead>
+							<tr>
+								<th>Tên sản phẩm</th>
+								<th>Giá</th>
+								<th>Đơn hàng</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><a href="#">Apple iPhone 3G 8GB</a></td>
+								<td>199.00 €</td>
+								<td>24</td>
+							</tr>
+							<tr>
+								<td><a href="#">Fuji FinePix S5800</a></td>
+								<td>365.24 €</td>
+								<td>19</td>
+							</tr>
+							<tr>
+								<td><a href="#">Canon PIXMA MP140</a></td>
+								<td>59.50 €</td>
+								<td>12</td>
+							</tr>
+							<tr>
+								<td><a href="#">Apple iPhone 3G 16GB</a></td>
+								<td>199.00 €</td>
+								<td>10</td>
+							</tr>
+							<tr>
+								<td><a href="#">Prenosnik HP 530 1,6GHz</a></td>
+								<td>499.00 €</td>
+								<td>6</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div id="infobox" style="float: right;">
+					<h3>KHÁCH HÀNG GẦN ĐÂY</h3>
+					<table>
+						<thead>
+							<tr>
+								<th>Họ tên</th>
+								<th>Số lượng đơn hàng</th>
+								<th>Tổng số tiền</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><a href="#">Jennifer Kyrnin</a></td>
+								<td>1</td>
+								<td>14.95 €</td>
+							</tr>
+							<tr>
+								<td><a href="#">Mark Kyrnin</a></td>
+								<td>2</td>
+								<td>34.27 €</td>
+							</tr>
+							<tr>
+								<td><a href="#">Virgílio Cezar</a></td>
+								<td>2</td>
+								<td>61.39 €</td>
+							</tr>
+							<tr>
+								<td><a href="#">Todd Simonides</a></td>
+								<td>5</td>
+								<td>1472.56 €</td>
+							</tr>
+							<tr>
+								<td><a href="#">Carol Elihu</a></td>
+								<td>1</td>
+								<td>9.95 €</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			
+				<div id="box">
+					<h3>DANH SÁCH ĐƠN HÀNG</h3>
+					<table width="100%">
+						<thead>
+							<tr>
+								<th width="20px"><input type="checkbox" /></th>
+								<th width="170px"><a href="#">Tên khách hàng</a></th>
+								<th width="200px"><a href="#">Tên sản phẩm</a></th>
+								<th width="200px"><a href="#">Địa chỉ liên hệ</a></th>
+								<th width="200px"><a href="#">Email</a></th>
+								<th><a href="#">Đơn giá</a></th>
+
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td align="center"><input type="checkbox" /></td>
+								<td><a href="#">Jennifer Hodes</a></td>
+								<td>jennifer.hodes@gmail.com</td>
+								<td>General</td>
+								<td>1000</td>
+								<td>July 2, 2008</td>
+							</tr>
+							<tr>
+								<td align="center"><input type="checkbox" /></td>
+								<td><a href="#">Mark Kyrnin</a></td>
+								<td>mark.kyrnin@hotmail.com</td>
+								<td>Affiliate</td>
+								<td>8310</td>
+								<td>June 17, 2008</td>
+							</tr>
+							<tr>
+								<td align="center"><input type="checkbox" /></td>
+								<td><a href="#">Virgílio Cezar</a></td>
+								<td>virgilio@somecompany.cz</td>
+								<td>General</td>
+								<td>6200</td>
+								<td>June 31, 2008</td>
+							</tr>
+							<tr>
+								<td align="center"><input type="checkbox" /></td>
+								<td><a href="#">Todd Simonides</a></td>
+								<td>todd.simonides@gmail.com</td>
+								<td>Wholesale</td>
+								<td>2010</td>
+								<td>June 5, 2008</td>
+							</tr>
+							<tr>
+								<td align="center"><input type="checkbox" /></td>
+								<td><a href="#">Carol Elihu</a></td>
+								<td>carol@herbusiness.com</td>
+								<td>General</td>
+								<td>3120</td>
+								<td>May 23, 2008</td>
+							</tr>
+							<tr>
+								<td align="center"><input type="checkbox" /></td>
+								<td><a href="#">Jennifer Hodes</a></td>
+								<td>jennifer.hodes@gmail.com</td>
+								<td>General</td>
+								<td>1000</td>
+								<td>July 2, 2008</td>
+							</tr>
+							<tr>
+								<td align="center"><input type="checkbox" /></td>
+								<td><a href="#">Mark Kyrnin</a></td>
+								<td>mark.kyrnin@hotmail.com</td>
+								<td>Affiliate</td>
+								<td>8310</td>
+								<td>June 17, 2008</td>
+							</tr>
+							<tr>
+								<td align="center"><input type="checkbox" /></td>
+								<td><a href="#">Virgílio Cezar</a></td>
+								<td>virgilio@somecompany.cz</td>
+								<td>General</td>
+								<td>6200</td>
+								<td>June 31, 2008</td>
+							</tr>
+							<tr>
+								<td align="center"><input type="checkbox" /></td>
+								<td><a href="#">Todd Simonides</a></td>
+								<td>todd.simonides@gmail.com</td>
+								<td>Wholesale</td>
+								<td>2010</td>
+								<td>June 5, 2008</td>
+							</tr>
+							<tr>
+								<td align="center"><input type="checkbox" /></td>
+								<td><a href="#">Carol Elihu</a></td>
+								<td>carol@herbusiness.com</td>
+								<td>General</td>
+								<td>3120</td>
+								<td>May 23, 2008</td>
+							</tr>
+						</tbody>
+					</table>
+					<div id="pager">
+						Page <a href="#"><img src="img/icons/arrow_left.gif"
+							width="16" height="16" /></a> <input size="1" value="1" type="text"
+							name="page" id="page" /> <a href="#"><img
+							src="img/icons/arrow_right.gif" width="16" height="16" /></a>of 42
+						pages | View <select name="view">
+							<option>10</option>
+							<option>20</option>
+							<option>50</option>
+							<option>100</option>
+						</select> per page | Total <strong>420</strong> records found
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<div id="footer">
+		<div id="credits">
+			Template by <a href="http://www.bloganje.com">Bloganje</a>
+		</div>
+		<!-- <div id="styleswitcher">
+            <ul>
+                <li><a href="javascript: document.cookie='theme='; window.location.reload();" title="Default" id="defswitch">d</a></li>
+                <li><a href="javascript: document.cookie='theme=1'; window.location.reload();" title="Blue" id="blueswitch">b</a></li>
+                <li><a href="javascript: document.cookie='theme=2'; window.location.reload();" title="Green" id="greenswitch">g</a></li>
+                <li><a href="javascript: document.cookie='theme=3'; window.location.reload();" title="Brown" id="brownswitch">b</a></li>
+                <li><a href="javascript: document.cookie='theme=4'; window.location.reload();" title="Mix" id="mixswitch">m</a></li>
+                <li><a href="javascript: document.cookie='theme=5'; window.location.reload();" title="Mix" id="defswitch">m</a></li>
+            </ul>
+        </div><br /> -->
+
+	</div>
+	</div>
+</body>
+</html>

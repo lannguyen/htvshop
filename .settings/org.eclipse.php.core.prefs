@@ -1,0 +1,4 @@
+eclipse.preferences.version=1
+include_path=0;/htvshop\u00050;/htvshop/modules/right\u00050;/htvshop/modules/product\u00050;/htvshop/modules/news\u00050;/htvshop/modules/contact\u00050;/htvshop/modules/footer\u00050;/htvshop/modules/cart\u00050;/htvshop/includes\u00050;/htvshop/modules/about\u00050;/htvshop/modules/home\u00050;/htvshop/modules/left\u00050;/htvshop/modules/header\u00050;/htvshop/admin/modules/news\u00050;/htvshop/admin/modules/header\u00050;/htvshop/admin/modules/product\u00050;/htvshop/admin/modules/member\u00050;/htvshop/admin/modules\u00050;/htvshop/admin/modules/footer\u00050;/htvshop/admin/modules/home
+phpVersion=php5.4
+useShortTags=true
