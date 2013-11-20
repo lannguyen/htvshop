@@ -11,18 +11,26 @@ if(isset($_GET['mod']))
 	$module = $_GET['mod'];		
 
 switch($module){	
-	case 'order':
-		include("modules/orders.php");
+	case 'news':
+		include("modules/news/news.php");
 		break;
-	case 'user':
-		include("modules/users.php");
+	case 'about':
+		include("modules/about/about.php");
 		break;
 	case 'product':
-		include("modules/product.php");
-		break;	
+		include("modules/product/product.php");
+		break;
+	case 'contact':
+		include("modules/contact/contact.php");
+		break;
+	case 'cart':
+		include("modules/cart/cart.php");
+		break;		
 	default:
 		include("modules/home/home.php");
 		break;		
 }
+
+include("modules/footer/footer.php");
 
 ?>

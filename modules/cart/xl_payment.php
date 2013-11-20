@@ -4,8 +4,9 @@ $tel = $_POST['tel'];
 $email = $_POST['email'];
 $add = $_POST['add'];
 $cart = $_SESSION['cart'];
+$date = getcurrentDate();
 
-$str = "INSERT INTO tbl_payment(fullname,tel,email,address,cart) VALUES('$fullname','$tel','$email','$add','$cart')";
+$str = "INSERT INTO tbl_payment(fullname,tel,email,address,cart,datebuy) VALUES('$fullname','$tel','$email','$add','$cart','$date')";
 
 $result = mysql_query($str);
 if($result){

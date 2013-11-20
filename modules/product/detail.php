@@ -28,7 +28,7 @@ while($rows = mysql_fetch_array($result)){
 					</a>
 				</div>
 				<div class="specifications">
-					Tình trạng:&nbsp; <span class="blue"><?php echo $rows["status"];?></span><br /> 
+					Tình trạng:&nbsp; <span class="blue"><?php $status = ($rows["status"] == "yes")? "Còn hàng": "Hết hàng"; echo $status;?></span><br /> 
 					Bảo hành:&nbsp;<span class="blue"><?php echo $rows["warranty"];?></span><br /> 
 					Thông số:&nbsp;<span class="blue"><?php echo $rows["detail"];?></span><br />
 				</div>
