@@ -31,7 +31,7 @@
 		</div>
 
 		<div id="infobox" class="margin-left">
-			<h3>SẢN PHẨM BÁN CHẠY</h3>
+			<h3>TOP SẢN PHẨM BÁN CHẠY</h3>
 			<table>
 				<thead>
 					<tr>
@@ -70,13 +70,22 @@
 						
 						while($rows=mysql_fetch_array($rs)){
 							$d++;
-							$num_of_orders = countrecord("tbl_payment","fullname",$rows["fullname"]);							
-							
+							$_rs = mysql_query("SELECT * FROM tbl_payment WHERE fullname='{$rows["fullname"]}'");
+							$total = 0;
+							$num_of_orders = mysql_num_rows($_rs);
+							while($_rows = mysql_fetch_array($_rs)){
+								$payments = mysql_query("SELECT * FROM tbl_product WHERE id in({$_rows["cart"]})");
+								while($rows_payments = mysql_fetch_array($payments)){
+									$total += $rows_payments["price"];
+								} 
+							}	
+																																								
 					?>
 					<tr>
-						<td><a href="#"><?php echo $rows["fullname"];?></a></td>
+						<td><a href="#" onclick="$(window).attr('location','index.php?mod=order');"><?php echo $rows["fullname"];?></a></td>
 						<td><?php echo $num_of_orders;?></td>
-						<td></td>
+						<td><?php echo $total;?>&nbsp;VNĐ</td>
+
 					</tr>
 					<?php }
 						for($i = $d+1; $i <= 5; $i++){ ?>
@@ -91,116 +100,71 @@
 				</tbody>
 			</table>
 		</div>
-		</div>
-		<div id="box">
+		
+		<?php 		
+			$query = "SELECT * FROM tbl_payment";
+			$base_url= 'index.php?mod=order&';
+			$soorders = 16;
+		
+			if(isset($_GET['order']))
+				$s = $_GET['order'];
+			else
+				$s = 0;
+			$tongso = mysql_num_rows(mysql_query($query));
+			$str = mysql_query($query ." limit $s,$soorders");
+		?>		
+		<div id="infobox_big">
 			<h3>DANH SÁCH ĐƠN HÀNG</h3>
-			<table width="100%">
-				<thead>
-					<tr>
-						<th width="20px"><input type="checkbox" /></th>
-						<th width="170px"><a href="#">Tên khách hàng</a></th>
-						<th width="200px"><a href="#">Tên sản phẩm</a></th>
-						<th width="200px"><a href="#">Địa chỉ liên hệ</a></th>
-						<th width="200px"><a href="#">Email</a></th>
-						<th><a href="#">Đơn giá</a></th>
+			<table width="100%" id="list">
+					<thead>
+						<tr>							
+							<th width="170px"><a href="#">Tên khách hàng</a></th>
+							<th width="230px"><a href="#">Tên sản phẩm</a></th>							
+							<th width="200px"><a href="#">Địa chỉ liên hệ</a></th>
+							<th width="170px"><a href="#">Email</a></th>
+							<th><a href="#">Đơn giá</a></th>
 
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td align="center"><input type="checkbox" /></td>
-						<td><a href="#">Jennifer Hodes</a></td>
-						<td>jennifer.hodes@gmail.com</td>
-						<td>General</td>
-						<td>1000</td>
-						<td>July 2, 2008</td>
-					</tr>
-					<tr>
-						<td align="center"><input type="checkbox" /></td>
-						<td><a href="#">Mark Kyrnin</a></td>
-						<td>mark.kyrnin@hotmail.com</td>
-						<td>Affiliate</td>
-						<td>8310</td>
-						<td>June 17, 2008</td>
-					</tr>
-					<tr>
-						<td align="center"><input type="checkbox" /></td>
-						<td><a href="#">Virgílio Cezar</a></td>
-						<td>virgilio@somecompany.cz</td>
-						<td>General</td>
-						<td>6200</td>
-						<td>June 31, 2008</td>
-					</tr>
-					<tr>
-						<td align="center"><input type="checkbox" /></td>
-						<td><a href="#">Todd Simonides</a></td>
-						<td>todd.simonides@gmail.com</td>
-						<td>Wholesale</td>
-						<td>2010</td>
-						<td>June 5, 2008</td>
-					</tr>
-					<tr>
-						<td align="center"><input type="checkbox" /></td>
-						<td><a href="#">Carol Elihu</a></td>
-						<td>carol@herbusiness.com</td>
-						<td>General</td>
-						<td>3120</td>
-						<td>May 23, 2008</td>
-					</tr>
-					<tr>
-						<td align="center"><input type="checkbox" /></td>
-						<td><a href="#">Jennifer Hodes</a></td>
-						<td>jennifer.hodes@gmail.com</td>
-						<td>General</td>
-						<td>1000</td>
-						<td>July 2, 2008</td>
-					</tr>
-					<tr>
-						<td align="center"><input type="checkbox" /></td>
-						<td><a href="#">Mark Kyrnin</a></td>
-						<td>mark.kyrnin@hotmail.com</td>
-						<td>Affiliate</td>
-						<td>8310</td>
-						<td>June 17, 2008</td>
-					</tr>
-					<tr>
-						<td align="center"><input type="checkbox" /></td>
-						<td><a href="#">Virgílio Cezar</a></td>
-						<td>virgilio@somecompany.cz</td>
-						<td>General</td>
-						<td>6200</td>
-						<td>June 31, 2008</td>
-					</tr>
-					<tr>
-						<td align="center"><input type="checkbox" /></td>
-						<td><a href="#">Todd Simonides</a></td>
-						<td>todd.simonides@gmail.com</td>
-						<td>Wholesale</td>
-						<td>2010</td>
-						<td>June 5, 2008</td>
-					</tr>
-					<tr>
-						<td align="center"><input type="checkbox" /></td>
-						<td><a href="#">Carol Elihu</a></td>
-						<td>carol@herbusiness.com</td>
-						<td>General</td>
-						<td>3120</td>
-						<td>May 23, 2008</td>
-					</tr>
-				</tbody>
-			</table>
-			<div id="pager">
-				Page <a href="#"><img src="img/icons/arrow_left.gif" width="16"
-					height="16" /> </a> <input size="1" value="1" type="text"
-					name="page" id="page" /> <a href="#"><img
-					src="img/icons/arrow_right.gif" width="16" height="16" /> </a>of 42
-				pages | View <select name="view">
-					<option>10</option>
-					<option>20</option>
-					<option>50</option>
-					<option>100</option>
-				</select> per page | Total <strong>420</strong> records found
-			</div>
+						</tr>
+					</thead>
+					<tbody>
+						<?php 							
+							while($rows=mysql_fetch_array($str)){ ?>
+						<tr>							
+							<td><a href="#" onclick="$(window).attr('location','index.php?mod=order&act=modify&id=<?php echo $rows["id"];?>');"><?php echo $rows['fullname'];?> </a></td>
+							<?php 
+							$query = "SELECT * FROM tbl_product WHERE id IN (" . $rows['cart'] . ")";
+							$rs = mysql_query($query);
+							$total=0;
+							?>
+							<td><?php
+							$tongsodong = mysql_num_rows($rs);
+							$d=0;
+							while($_rows = mysql_fetch_array($rs)){
+										$d++;
+										$total += $_rows["price"];?> <a
+								href="../index.php?mod=product&act=detail&id=<?php echo $_rows['id']; ?>"
+								class="product_name"><?php echo $_rows["name"];?> </a> <?php
+								if($d != $tongsodong)
+									echo ", ";
+								else
+									echo " ";
+								}
+								?>
+							</td>
+							
+							<td><?php echo $rows['address'];?></td>
+							<td><?php echo $rows["email"];?></td>
+							<td><?php echo $total. " ";?>VNĐ</td>
+						</tr>
+						<?php }?>
+					</tbody>
+				</table>
+	
+				<div style="margin: 15px 0 0 2px; padding-bottom: 10px;">
+					Trang &nbsp;
+					<?php echo pagenav($base_url, $s,"order", $tongso, $soorders);?>
+				</div>			
+		</div>
 	</div>
 </div>
 

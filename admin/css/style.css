@@ -78,14 +78,11 @@ select {
 	width: 950px;
 }
 
-#box {
+/* #box {
 	margin-top: 16px;
-}
+} */
 
-#box h3 {
-	padding: 5px;
-	font-size: 14px;
-}
+
 /*********************
 	Sidebar
 *********************/
@@ -118,14 +115,36 @@ select {
 *********************/
 #topmenu {
 	margin-top: 33px;
-	width: 700px;
+	width: 960px;
 	float: left;
 	voice-family: inherit;
+	position: relative;
 }
 
 #topmenu ul {
 	list-style: none;
 	line-height: 25px;
+}
+
+#topmenu div#loginbar {
+	list-style: none;
+	line-height: 25px;
+	position:absolute;
+	top:-6px; right: 0px;
+	font-weight: bolder;
+	color: #ffffff;
+}
+
+#topmenu div#loginbar a{
+	background: none;
+}
+
+#topmenu div#loginbar a:HOVER{
+	text-decoration: underline;
+}
+
+#topmenu div#loginbar a:VISITED{
+	color: #ffffff;
 }
 
 #topmenu li {
@@ -274,7 +293,7 @@ table {
 	margin: 5px;
 	border-collapse: collapse;
 	table-layout: automatic;
-	width: 98%;
+	width: 99%;
 }
 
 td,th {
@@ -287,14 +306,29 @@ thead {
 /*********************
 		Home
 *********************/
+
 #infowrap li {
 	display: inline:
+	
 }
 
 #infobox {
 	width: 465px;
 	float: left;
 	margin: 10px 0 0 0;
+}
+
+#infobox_big {
+	width: 940px;
+	float: left;
+	margin: 10px 0 0 0;
+	border:1px solid #d9e6f0;
+}
+
+#infobox_big h3{
+	background:#F7F6F0;
+	border-bottom:1px solid #d9e6f0;
+	color:#993400;
 }
 
 #infobox h3 {
@@ -352,8 +386,14 @@ thead {
 /*********************
 		Forms
 *********************/
+
 form {
 	padding: 10px;
+	margin: 0 auto;
+}
+
+form #alter {
+	padding: 0;
 	margin: 0 auto;
 }
 
@@ -398,14 +438,26 @@ form#form input {
 	width: 200px;
 }
 
+form#form input#img {
+	padding: 3px;
+	margin-bottom: 5px;
+	width: 250px;
+}
+
+form#form input#upload {
+	padding: 3px;
+	margin: 5px 0 5px 160px;
+	width: 250px;
+}
+
 form#form select {
 	margin-left: 0;
 	width: 130px;
 }
 
 form#form textarea {
-	width: 410px;
-	height: 200px;
+	width: 360px;
+	height: 130px;
 	padding: 5px;
 	overflow: auto;
 }
@@ -471,6 +523,17 @@ form#form #button1:hover,form#form #button2:hover {
 	background: transparent url(../img/icons/group.png) no-repeat left;
 }
 
+.group_delete {
+		background: transparent url(../img/icons/group_delete.png) no-repeat left;
+}
+
+.group_modify {
+	background: transparent url(../img/icons/group_edit.png) no-repeat left;
+}
+
+.pro_add {
+	background: transparent url(../img/icons/pro_add.png) no-repeat left;
+}
 .search {
 	background: transparent url(../img/icons/magnifier.png) no-repeat left;
 }
@@ -582,9 +645,61 @@ div.addition select{
 	position:absolute;
 	top: 1px;
 	left: 100px;
-	width: 120px;
+	width: 100px;
 }
 
 a.product_name:HOVER {
 	text-decoration: underline;	
 }
+
+ul#permission{
+	list-style:  outside none;
+}
+
+ul#permission li{
+	display: inline-block;
+	margin-left: 20px;
+}
+
+ul#permission li span {
+	font-weight: bolder;
+}
+
+ul#permission li input{
+	width: auto;
+}
+
+fieldset#opt table {
+	width: auto;
+}
+
+fieldset#opt table tr td{
+	border: none;
+}
+
+fieldset#opt table span{
+	color: #CC0000;
+}
+
+fieldset#opt select {
+	width: 150px;
+	margin-top: 10px;
+}
+
+fieldset#opt label {
+	clear: both;
+    display: block;
+    float: left;
+    margin-bottom: 5px;
+    padding-right: 10px;
+    text-align: right;
+    width: 150px;
+    margin-top: 10px;
+}
+
+fieldset#opt table td.checkbox{
+	padding-top: 7px;
+	width: 50px;
+}
+
+

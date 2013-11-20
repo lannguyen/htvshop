@@ -9,13 +9,13 @@ $module = (isset($_GET["mod"]))?$_GET['mod']:"";
 
 switch($module){	
 	case 'order':
-		include("modules/orders.php");
+		include("modules/order/orders.php");
 		break;
 	case 'product':
-		include("modules/product.php");
+		include("modules/product/product.php");
 		break;	
 	case 'user':
-		include("modules/users.php");
+		include("modules/user/users.php");
 		break;			
 	default:
 		include("modules/home/home.php");
